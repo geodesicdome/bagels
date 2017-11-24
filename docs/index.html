@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Display a map</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+<link href="https://fonts.googleapis.com/css?family=Aldrich" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+</head>
+<body>
+
+<!--adding geocoder script-->
+  <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.1.1/mapbox-gl-geocoder.min.js'></script>
+  <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.1.1/mapbox-gl-geocoder.css' type='text/css' />
+<!--adding directions script -->
+  <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v3.1.1/mapbox-gl-directions.js'></script>
+  <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v3.1.1/mapbox-gl-directions.css' type='text/css' />
+<!--adding popups -->
+<!-- Turf.js plugin -->
+ <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
+  <style>
+  .mapboxgl-ctrl-geocoder {
+    border: 5;
+    border-radius: 5;
+    border-color: #4C4D52;
+    background-color: #FFFFFF;
+    opacity: 0.85;
+    font-family: 'Roboto', sans-serif;
+    font-size:12px;
+    position: relative;
+    top: 0;
+    width: 400px;
+    length: 200px;
+    margin-top: 0;
+  }
+
+.mapboxgl.NavigationControl{
+  border: 5;
+  border-radius: 5;
+  background-color: #2C8FAC;
+  opacity: 0.85;
+
+}
+      .marker {
+        background-image: url('https://i.imgur.com/IP2wIyO.png');
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+.mapboxgl-popup {
+  max-width: 100px;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Aldrich');
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+.mapboxgl-popup-content {
+    color: #000000;
+    background-color: #FFFFFF;
+    border-color: #4C4D52;
+    max-width: 600px;
+    max-height: 600px;
+    opacity: 0.85;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    font-size: 12px;
+    #rcorners1 {
+      border-radius: 100px;
+      background: #73AD21;
+      padding: 20px;
+      width: 200px;
+      height: 150px;
+
+  }
+
+
+  </style>
+
+  <div id='map'></div>
+  <!--add style markers-->
+
+
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiZ2VvZGVzaWNkb21lIiwiYSI6ImNqYTVzajFxaDQ4NHgzMnBjZWtraXJ2MGIifQ.-yBWT0Z082LrHD3Th4v4lg';
+var map = new mapboxgl.Map({
+    container: 'map', // container id
+    style: 'mapbox://styles/geodesicdome/cjadjl1ir4evp2sqn094i2csv', // stylesheet location
+    center: [-122.440621, 37.782051], // starting position [lng, lat]
+    pitch: 60, // pitch in degrees
+    bearing: 15.17, // bearing in degrees
+    zoom: 13.24 // starting zoom
+});
+
+//adding geojson data
+var geojson = {
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
+"features": [
+{ "type": "Feature", "properties": { "X": -122.3914798, "Y": 37.779479, "Name": "The Bagel Bakery", "Rating": 4 }, "geometry": { "type": "Point", "coordinates": [ -122.3914798, 37.779479 ] } },
+{ "type": "Feature", "properties": { "X": -122.4050177, "Y": 37.7898669, "Name": "Posh Bagel", "Rating": 3 }, "geometry": { "type": "Point", "coordinates": [ -122.4050177, 37.7898669 ] } },
+{ "type": "Feature", "properties": { "X": -122.399916, "Y": 37.791492, "Name": "Noah's Bagels", "Rating": 3 }, "geometry": { "type": "Point", "coordinates": [ -122.399916, 37.791492 ] } },
+{ "type": "Feature", "properties": { "X": -122.3959351, "Y": 37.7952541, "Name": "Posh Bagel", "Rating": 3 }, "geometry": { "type": "Point", "coordinates": [ -122.3959351, 37.7952541 ] } },
+{ "type": "Feature", "properties": { "X": -122.4231086, "Y": 37.7647308, "Name": "Katz Bagels", "Rating": 5 }, "geometry": { "type": "Point", "coordinates": [ -122.4231086, 37.7647308 ] } },
+{ "type": "Feature", "properties": { "X": -122.489924, "Y": 37.732439, "Name": "Noah's Bagels", "Rating": 3 }, "geometry": { "type": "Point", "coordinates": [ -122.489924, 37.732439 ] } },
+{ "type": "Feature", "properties": { "X": -122.408924, "Y": 37.766622, "Name": "Noah's Bagels", "Rating": 3 }, "geometry": { "type": "Point", "coordinates": [ -122.408924, 37.766622 ] } },
+{ "type": "Feature", "properties": { "X": -122.264398, "Y": 37.827717, "Name": "Beauty's Bagel Shop", "Rating": 5 }, "geometry": { "type": "Point", "coordinates": [ -122.264398, 37.827717 ] } },
+{ "type": "Feature", "properties": { "X": -122.2768589, "Y": 37.7961309, "Name": "Authentic Bagel Company", "Rating": 3 }, "geometry": { "type": "Point", "coordinates": [ -122.2768589, 37.7961309 ] } },
+{ "type": "Feature", "properties": { "X": -122.2665169, "Y": 37.8703218, "Name": "Bagel Street Cafe", "Rating": 3 }, "geometry": { "type": "Point", "coordinates": [ -122.2665169, 37.8703218 ] } },
+{ "type": "Feature", "properties": { "X": -122.259235, "Y": 37.867941, "Name": "Noah's Bagels", "Rating": 2 }, "geometry": { "type": "Point", "coordinates": [ -122.259235, 37.867941 ] } },
+{ "type": "Feature", "properties": { "X": -122.2531144, "Y": 37.8261775, "Name": "Posh Bagel", "Rating": 3 }, "geometry": { "type": "Point", "coordinates": [ -122.2531144, 37.8261775 ] } },
+{ "type": "Feature", "properties": { "X": -122.243372, "Y": 37.811207, "Name": "Noah's Bagels", "Rating": 2 }, "geometry": { "type": "Point", "coordinates": [ -122.243372, 37.811207 ] } },
+{ "type": "Feature", "properties": { "X": -122.209095, "Y": 37.826486, "Name": "Noah's Bagels", "Rating": 2 }, "geometry": { "type": "Point", "coordinates": [ -122.209095, 37.826486 ] } },
+{ "type": "Feature", "properties": { "X": -122.2101132, "Y": 37.8261644, "Name": "House of Bagels", "Rating": 5 }, "geometry": { "type": "Point", "coordinates": [ -122.2101132, 37.8261644 ] } },
+{ "type": "Feature", "properties": { "X": -122.451866, "Y": 37.786344, "Name": "Noah's Bagels", "Rating": 2 }, "geometry": { "type": "Point", "coordinates": [ -122.451866, 37.786344 ] } },
+{ "type": "Feature", "properties": { "X": -122.4324703, "Y": 37.7836437, "Name": "Wise Sons Bagel & Bakery", "Rating": 4 }, "geometry": { "type": "Point", "coordinates": [ -122.4324703, 37.7836437 ] } },
+{ "type": "Feature", "properties": { "X": -122.4208812, "Y": 37.7904364, "Name": "Star Bagel", "Rating": 4 }, "geometry": { "type": "Point", "coordinates": [ -122.4208812, 37.7904364 ] } },
+{ "type": "Feature", "properties": { "X": -122.4374073, "Y": 37.8005039, "Name": "Noah's Bagels", "Rating": 2 }, "geometry": { "type": "Point", "coordinates": [ -122.4374073, 37.8005039 ] } },
+{ "type": "Feature", "properties": { "X": -122.4221902, "Y": 37.7964959, "Name": "Bagelry", "Rating": 4 }, "geometry": { "type": "Point", "coordinates": [ -122.4221902, 37.7964959 ] } },
+{ "type": "Feature", "properties": { "X": -122.5141577, "Y": 37.8982781, "Name": "New York Bagel", "Rating": 3 }, "geometry": { "type": "Point", "coordinates": [ -122.5141577, 37.8982781 ] } },
+{ "type": "Feature", "properties": { "X": -122.5037223, "Y": 37.8696015, "Name": "Bridgeway Bagel", "Rating": 4 }, "geometry": { "type": "Point", "coordinates": [ -122.5037223, 37.8696015 ] } },
+{ "type": "Feature", "properties": { "X": -122.4659545, "Y": 37.7642688, "Name": "Posh Bagel", "Rating": 2 }, "geometry": { "type": "Point", "coordinates": [ -122.4659545, 37.7642688 ] } },
+{ "type": "Feature", "properties": { "X": -122.4735139, "Y": 37.7808649, "Name": "House of Bagels - San Francisco", "Rating": 5 }, "geometry": { "type": "Point", "coordinates": [ -122.4735139, 37.7808649 ] } },
+{ "type": "Feature", "properties": { "X": -122.2428952, "Y": 37.7639608, "Name": "House of Bagels", "Rating": 5 }, "geometry": { "type": "Point", "coordinates": [ -122.2428952, 37.7639608 ] } },
+{ "type": "Feature", "properties": { "X": -122.5223484, "Y": 37.9725886, "Name": "House of Bagels", "Rating": 5 }, "geometry": { "type": "Point", "coordinates": [ -122.5223484, 37.9725886 ] } }
+]
+}
+
+
+//adding geocoder
+map.addControl(new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken
+}));
+
+//adding navigational controls
+map.addControl(new mapboxgl.NavigationControl());
+
+
+// add markers to map
+geojson.features.forEach(function(marker) {
+
+  // create a HTML element for each feature
+  var el = document.createElement('div');
+  el.className = 'marker';
+
+  // make a marker for each feature and add to the map
+  new mapboxgl.Marker(el)
+  .setLngLat(marker.geometry.coordinates)
+  .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+  .setHTML('<h3>' + marker.properties.Name + '</h3>' + '<h3>' + 'Rating:' + ' ' + marker.properties.Rating + '</h3>'))
+  .addTo(map);
+});
+
+
+</script>
+
+</body>
+</html>
