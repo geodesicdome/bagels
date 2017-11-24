@@ -48,10 +48,10 @@
 
 }
       .marker {
-        background-image: url('https://i.imgur.com/IP2wIyO.png');
+        background-image: url('https://i.imgur.com/67tQci4.png');
         background-size: cover;
-        width: 50px;
-        height: 50px;
+        width: 70px;
+        height: 70px;
         border-radius: 50%;
         cursor: pointer;
       }
@@ -93,7 +93,7 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoiZ2VvZGVzaWNkb21lIiwiYSI6ImNqYTVzajFxaDQ4NHgzMnBjZWtraXJ2MGIifQ.-yBWT0Z082LrHD3Th4v4lg';
 var map = new mapboxgl.Map({
     container: 'map', // container id
-    style: 'mapbox://styles/geodesicdome/cjadjl1ir4evp2sqn094i2csv', // stylesheet location
+    style: 'mapbox://styles/geodesicdome/cjae8p7oh289a2sk6407f6kmx', // stylesheet location
     center: [-122.440621, 37.782051], // starting position [lng, lat]
     pitch: 60, // pitch in degrees
     bearing: 15.17, // bearing in degrees
@@ -133,7 +133,7 @@ var geojson = {
 { "type": "Feature", "properties": { "X": -122.5223484, "Y": 37.9725886, "Name": "House of Bagels", "Rating": 5 }, "geometry": { "type": "Point", "coordinates": [ -122.5223484, 37.9725886 ] } }
 ]
 }
-
+//
 
 //adding geocoder
 map.addControl(new MapboxGeocoder({
