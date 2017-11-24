@@ -1,7 +1,4 @@
 # bagels
-
-<br><br>
-
 <br><br>
 map of bagel shops
 <br><br>
