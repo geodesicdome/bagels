@@ -1,6 +1,10 @@
-# bagels
+<center># bagels
+  </center>
 <br><br>
-<img src="https://i.imgur.com/IP2wIyO.png" alt="Bagels">
+<center>
+<img src='https://i.imgur.com/wsFv5Pr.jpg' />
+  </center>
+<br><br>
 map of bagel shops
 <br><br>
 this a map of where to get my favorite food in the world, bagels! 
