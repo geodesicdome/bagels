@@ -1,0 +1,32 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
+"features": [
+{ "type": "Feature", "properties": { "X": -122.3914798, "Y": 37.779479, "Name": "The Bagel Bakery", "Rating": 4 }, "geometry": { "type": "Point", "coordinates": [ -122.3914798, 37.779479 ] } },
+{ "type": "Feature", "properties": { "X": -122.4050177, "Y": 37.7898669, "Name": "Posh Bagel", "Rating": 3 }, "geometry": { "type": "Point", "coordinates": [ -122.4050177, 37.7898669 ] } },
+{ "type": "Feature", "properties": { "X": -122.399916, "Y": 37.791492, "Name": "Noah's Bagels", "Rating": 3 }, "geometry": { "type": "Point", "coordinates": [ -122.399916, 37.791492 ] } },
+{ "type": "Feature", "properties": { "X": -122.3959351, "Y": 37.7952541, "Name": "Posh Bagel", "Rating": 3 }, "geometry": { "type": "Point", "coordinates": [ -122.3959351, 37.7952541 ] } },
+{ "type": "Feature", "properties": { "X": -122.4231086, "Y": 37.7647308, "Name": "Katz Bagels", "Rating": 5 }, "geometry": { "type": "Point", "coordinates": [ -122.4231086, 37.7647308 ] } },
+{ "type": "Feature", "properties": { "X": -122.489924, "Y": 37.732439, "Name": "Noah's Bagels", "Rating": 3 }, "geometry": { "type": "Point", "coordinates": [ -122.489924, 37.732439 ] } },
+{ "type": "Feature", "properties": { "X": -122.408924, "Y": 37.766622, "Name": "Noah's Bagels", "Rating": 3 }, "geometry": { "type": "Point", "coordinates": [ -122.408924, 37.766622 ] } },
+{ "type": "Feature", "properties": { "X": -122.264398, "Y": 37.827717, "Name": "Beauty's Bagel Shop", "Rating": 5 }, "geometry": { "type": "Point", "coordinates": [ -122.264398, 37.827717 ] } },
+{ "type": "Feature", "properties": { "X": -122.2768589, "Y": 37.7961309, "Name": "Authentic Bagel Company", "Rating": 3 }, "geometry": { "type": "Point", "coordinates": [ -122.2768589, 37.7961309 ] } },
+{ "type": "Feature", "properties": { "X": -122.2665169, "Y": 37.8703218, "Name": "Bagel Street Cafe", "Rating": 3 }, "geometry": { "type": "Point", "coordinates": [ -122.2665169, 37.8703218 ] } },
+{ "type": "Feature", "properties": { "X": -122.259235, "Y": 37.867941, "Name": "Noah's Bagels", "Rating": 2 }, "geometry": { "type": "Point", "coordinates": [ -122.259235, 37.867941 ] } },
+{ "type": "Feature", "properties": { "X": -122.2531144, "Y": 37.8261775, "Name": "Posh Bagel", "Rating": 3 }, "geometry": { "type": "Point", "coordinates": [ -122.2531144, 37.8261775 ] } },
+{ "type": "Feature", "properties": { "X": -122.243372, "Y": 37.811207, "Name": "Noah's Bagels", "Rating": 2 }, "geometry": { "type": "Point", "coordinates": [ -122.243372, 37.811207 ] } },
+{ "type": "Feature", "properties": { "X": -122.209095, "Y": 37.826486, "Name": "Noah's Bagels", "Rating": 2 }, "geometry": { "type": "Point", "coordinates": [ -122.209095, 37.826486 ] } },
+{ "type": "Feature", "properties": { "X": -122.2101132, "Y": 37.8261644, "Name": "House of Bagels", "Rating": 5 }, "geometry": { "type": "Point", "coordinates": [ -122.2101132, 37.8261644 ] } },
+{ "type": "Feature", "properties": { "X": -122.451866, "Y": 37.786344, "Name": "Noah's Bagels", "Rating": 2 }, "geometry": { "type": "Point", "coordinates": [ -122.451866, 37.786344 ] } },
+{ "type": "Feature", "properties": { "X": -122.4324703, "Y": 37.7836437, "Name": "Wise Sons Bagel & Bakery", "Rating": 4 }, "geometry": { "type": "Point", "coordinates": [ -122.4324703, 37.7836437 ] } },
+{ "type": "Feature", "properties": { "X": -122.4208812, "Y": 37.7904364, "Name": "Star Bagel", "Rating": 4 }, "geometry": { "type": "Point", "coordinates": [ -122.4208812, 37.7904364 ] } },
+{ "type": "Feature", "properties": { "X": -122.4374073, "Y": 37.8005039, "Name": "Noah's Bagels", "Rating": 2 }, "geometry": { "type": "Point", "coordinates": [ -122.4374073, 37.8005039 ] } },
+{ "type": "Feature", "properties": { "X": -122.4221902, "Y": 37.7964959, "Name": "Bagelry", "Rating": 4 }, "geometry": { "type": "Point", "coordinates": [ -122.4221902, 37.7964959 ] } },
+{ "type": "Feature", "properties": { "X": -122.5141577, "Y": 37.8982781, "Name": "New York Bagel", "Rating": 3 }, "geometry": { "type": "Point", "coordinates": [ -122.5141577, 37.8982781 ] } },
+{ "type": "Feature", "properties": { "X": -122.5037223, "Y": 37.8696015, "Name": "Bridgeway Bagel", "Rating": 4 }, "geometry": { "type": "Point", "coordinates": [ -122.5037223, 37.8696015 ] } },
+{ "type": "Feature", "properties": { "X": -122.4659545, "Y": 37.7642688, "Name": "Posh Bagel", "Rating": 2 }, "geometry": { "type": "Point", "coordinates": [ -122.4659545, 37.7642688 ] } },
+{ "type": "Feature", "properties": { "X": -122.4735139, "Y": 37.7808649, "Name": "House of Bagels - San Francisco", "Rating": 5 }, "geometry": { "type": "Point", "coordinates": [ -122.4735139, 37.7808649 ] } },
+{ "type": "Feature", "properties": { "X": -122.2428952, "Y": 37.7639608, "Name": "House of Bagels", "Rating": 5 }, "geometry": { "type": "Point", "coordinates": [ -122.2428952, 37.7639608 ] } },
+{ "type": "Feature", "properties": { "X": -122.5223484, "Y": 37.9725886, "Name": "House of Bagels", "Rating": 5 }, "geometry": { "type": "Point", "coordinates": [ -122.5223484, 37.9725886 ] } }
+]
+}
